@@ -8,4 +8,8 @@ sed -e "s/\${SOURCE}/sync.$HOST/" -e "s/\${TARGET}/$TARGET/" nginx.conf > /etc/n
 . /scripts/util.sh
 
 auto_enable_configs
+echo "waiting a bit"
+sleep 5
+/scripts/run_certbot.sh
+
 nginx -s reload
