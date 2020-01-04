@@ -1,3 +1,5 @@
 FROM staticfloat/nginx-certbot
 COPY nginx.conf /
-COPY configs.sh /scripts/startup/
+COPY entrypoint.sh /
+
+CMD ["/bin/bash", "/entrypoint.sh"]
