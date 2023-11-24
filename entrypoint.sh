@@ -4,5 +4,6 @@ sed -e "s/\${SOURCE}/$HOST/" -e "s/\${TARGET}/$TARGET/" site.conf > /etc/nginx/c
 sed -e "s/\${SOURCE}/api.$HOST/" -e "s/\${TARGET}/$TARGET/" site.conf > /etc/nginx/conf.d/api.$HOST.conf
 sed -e "s/\${SOURCE}/static.$HOST/" -e "s/\${TARGET}/$TARGET/" site.conf > /etc/nginx/conf.d/static.$HOST.conf
 sed -e "s/\${SOURCE}/sync.$HOST/" -e "s/\${TARGET}/$TARGET/" site.conf > /etc/nginx/conf.d/sync.$HOST.conf
+sed -e "s/\${SOURCE}/maps.$HOST/" -e "s/\${TARGET}/$TARGET/" site.conf > /etc/nginx/conf.d/maps.$HOST.conf
 
 /scripts/start_nginx_certbot.sh
