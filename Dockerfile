@@ -11,5 +11,6 @@ ENV API_FASTCGI=api:9000
 ENV FRONTEND=frontend
 ENV SYNC=sync
 ENV MAPS=maps
+ENV METRICS=metrics
 
 CMD ["/bin/bash", "/entrypoint.sh"]
