@@ -12,6 +12,9 @@ jobs:
   docker:
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
       - name: Login to DockerHub
@@ -24,6 +27,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: demostf/proxy:latest
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
